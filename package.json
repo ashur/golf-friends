@@ -1,0 +1,20 @@
+{
+  "name": "golf-friends",
+  "version": "1.0.0",
+  "description": "curl your golf friends",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashur/golf-friends.git"
+  },
+  "author": "Ashur Cabrera <hello@ashur.cab>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashur/golf-friends/issues"
+  },
+  "homepage": "https://github.com/ashur/golf-friends",
+  "dependencies": {
+    "corpora": "github:dariusk/corpora",
+    "tracery-grammar": "^2.7.4"
+  }
+}
