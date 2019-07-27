@@ -7,3 +7,6 @@ module.exports.lastNames = []
 		.filter( town => town.indexOf( '-' ) === -1 )
 	.concat( require( 'corpora/data/humans/spanishLastNames' )['lastNames'] )
 	.concat( require( 'corpora/data/humans/lastNames' )['lastNames'] )
+
+module.exports.objects = []
+	.concat( require( 'corpora/data/objects/objects' )['objects'] )
