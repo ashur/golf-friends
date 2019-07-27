@@ -13,7 +13,7 @@ class Club
 			.digest( 'hex' );
 
 		this.accuracy = this.valueOf( this.subhash( 0 ) );
-		this.power = this.valueOf( this.subhash( 1 ) );
+		this.power = this.valueOf( this.subhash( 1 ), 0.25 );
 	}
 
 	subhash( index )
@@ -24,10 +24,11 @@ class Club
 		return this.hash.substring( start, end );
 	}
 
-	valueOf( subhash )
+	valueOf( subhash, minValue=0 )
 	{
 		let raw = parseInt( subhash, 16 );
-		return (raw / maxValue).toFixed( 3 );
+		let value = (raw / maxValue) + minValue;
+		return value.toFixed( 3 );
 	}
 }
 
