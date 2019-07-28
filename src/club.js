@@ -22,6 +22,7 @@ class Club
 		this.maxDistance = this.minDistance + range;
 
 		this.attempt = 'max';
+		this.strokes = 1;
 	}
 
 	subhash( index )

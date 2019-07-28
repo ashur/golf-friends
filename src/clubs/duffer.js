@@ -1,15 +1,9 @@
 const Club = require( '../club' );
 
-class Duffer extends Club
-{
-	constructor()
-	{
-		super( 'Duffer' );
+let club = new Club( 'Duffer' );
 
-		this.accuracy = 0.3;
-		this.minDistance = 0;
-		this.maxDistance = 30;
-	}
-}
+club.accuracy = 0.3;
+club.minDistance = 0;
+club.maxDistance = 50;
 
-module.exports = Duffer;
+module.exports = club;

@@ -1,15 +1,9 @@
 const Club = require( '../club' );
 
-class SteadyBetty extends Club
-{
-	constructor()
-	{
-		super( 'Steady Betty' );
+let club = new Club( 'Steady Betty' );
 
-		this.accuracy = 1;
-		this.minDistance = 10;
-		this.maxDistance = 20;
-	}
-}
+club.accuracy = 0.9;
+club.minDistance = 25;
+club.maxDistance = 50;
 
-module.exports = SteadyBetty;
+module.exports = club;

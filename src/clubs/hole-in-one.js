@@ -1,17 +1,9 @@
 const Club = require( '../club' );
 
-class HoleInOne extends Club
-{
-	constructor()
-	{
-		super( 'Hole In One' );
+let club = new Club( 'Hole in One' );
 
-		this.accuracy = 1;
-		this.minDistance = 0;
-		this.maxDistance = 1000;
+club.accuracy = 1;
+club.minDistance = 0;
+club.maxDistance = 9999;
 
-		this.attempt = 'hole';
-	}
-}
-
-module.exports = HoleInOne;
+module.exports = club;
