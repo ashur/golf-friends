@@ -13,7 +13,15 @@ class Club
 			.digest( 'hex' );
 
 		this.accuracy = this.valueOf( this.subhash( 0 ) );
-		this.power = this.valueOf( this.subhash( 1 ), 0.25 );
+
+		let range = Math.ceil( this.valueOf( this.subhash( 1 ) ) * 25 );
+		this.minDistance = Math.round(
+			(this.valueOf( this.subhash( 2 ) ) * 10) *
+			(this.valueOf( this.subhash( 3 ) ) * 10)
+		);
+		this.maxDistance = this.minDistance + range;
+
+		this.attempt = 'max';
 	}
 
 	subhash( index )
@@ -24,11 +32,41 @@ class Club
 		return this.hash.substring( start, end );
 	}
 
+	swing( attempt )
+	{
+		let distance = 0;
+
+		if( Math.random() > this.accuracy )
+		{
+			distance = this.minDistance + Math.random() * (this.maxDistance - this.minDistance);
+		}
+		else
+		{
+			if( attempt > this.maxDistance )
+			{
+				distance = this.maxDistance;
+			}
+			else
+			{
+				if( attempt < this.minDistance )
+				{
+					distance = this.minDistance;
+				}
+				else
+				{
+					distance = attempt;
+				}
+			}
+		}
+
+		return Math.round( distance );
+	}
+
 	valueOf( subhash, minValue=0 )
 	{
 		let raw = parseInt( subhash, 16 );
 		let value = (raw / maxValue) + minValue;
-		return value.toFixed( 3 );
+		return parseFloat( value.toFixed( 3 ) );
 	}
 }
 

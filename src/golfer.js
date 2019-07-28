@@ -23,12 +23,13 @@ class Golfer
 			.join( ' ' );
 	}
 
-	swing( clubIndex, expected )
+	swing( clubIndex, attempt, direction=1 )
 	{
 		let club = this.clubs[clubIndex];
-		let actual = expected * club.power;
+		let actual = club.swing( attempt );
 
-		this.ball.distance += actual;
+		this.ball.distance += (actual * direction);
+		return actual;
 	}
 }
 
